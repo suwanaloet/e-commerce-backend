@@ -4,6 +4,9 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 // The `/api/products` endpoint
 
 // get all products
+
+// GET ALL
+// http://localhost:3001/api/products/
 router.get('/', (req, res) => {
   // find all products
   Product.findAll({
@@ -29,6 +32,7 @@ router.get('/', (req, res) => {
 });
 
 // get one product
+// http://localhost:3001/api/products/1
 router.get('/:id', (req, res) => {
   // find a single product by its `id`
 

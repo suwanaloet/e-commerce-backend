@@ -2,14 +2,15 @@ const router = require('express').Router();
 const { Tag, Product, ProductTag } = require('../../models');
 
 // The `/api/tags` endpoint
-
+// GET ALL
+// http://localhost:3001/api/tags/
 router.get('/', (req, res) => {
   // find all tags
   Tag.findAll({
     // be sure to include its associated Product data
     include: [
       {
-        model: Tag,
+        model: Product,
         through: ProductTag,
       }
     ],
@@ -21,6 +22,8 @@ router.get('/', (req, res) => {
     });
 });
 
+//GET ONE
+// http://localhost:3001/api/tags/1
 router.get('/:id', (req, res) => {
   // find a single tag by its `id`
   Tag.findOne({
@@ -31,7 +34,7 @@ router.get('/:id', (req, res) => {
     // be sure to include its associated Product data
     include: [
       {
-        model: Tag,
+        model: Product,
         through: ProductTag,
       }
     ],
@@ -43,6 +46,13 @@ router.get('/:id', (req, res) => {
     });
 });
 
+//POST
+// http://localhost:3001/api/tags/
+/*
+ {
+    "tag_name" : "placeholdertagname"
+ }
+*/
 router.post('/', (req, res) => {
   // create a new tag
   Tag.create({
@@ -56,6 +66,13 @@ router.post('/', (req, res) => {
     });
 });
 
+//PUT
+// http://localhost:3001/api/tags/9
+/*
+ {
+    "tag_name" : "placeholder_tag_name"
+ }
+*/
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
   Tag.update(
@@ -76,6 +93,8 @@ router.put('/:id', (req, res) => {
     });
 });
 
+// DELETE
+// http://localhost:3001/api/tags/9
 router.delete('/:id', (req, res) => {
   // delete on tag by its `id` value
   Tag.destroy(

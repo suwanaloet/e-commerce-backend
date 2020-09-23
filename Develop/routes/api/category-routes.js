@@ -3,6 +3,8 @@ const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
 
+// GET ALL
+// http://localhost:3001/api/categories/
 router.get('/', (req, res) => {
   // find all categories
   Category.findAll({
@@ -21,6 +23,9 @@ router.get('/', (req, res) => {
     });
 });
 
+
+//GET ONE
+http://localhost:3001/api/categories/1
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
   Category.findOne({
@@ -43,6 +48,13 @@ router.get('/:id', (req, res) => {
     });
 });
 
+//POST
+// http://localhost:3001/api/categories/
+/*
+ {
+    "category_name" : "Stitch Fix Clothes"
+ }
+*/
 router.post('/', (req, res) => {
   // create a new category
   Category.create({
@@ -55,6 +67,14 @@ router.post('/', (req, res) => {
     });
 });
 
+
+//PUT
+// http://localhost:3001/api/categories/1
+/*
+ {
+    "category_name" : "Stitch Fix Clothing"
+ }
+*/
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
   Category.update(
@@ -75,6 +95,10 @@ router.put('/:id', (req, res) => {
     });
 
 });
+
+
+// DELETE
+// http://localhost:3001/api/categories/6
 
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
