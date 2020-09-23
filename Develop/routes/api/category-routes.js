@@ -69,7 +69,7 @@ router.post('/', (req, res) => {
 
 
 //PUT
-// http://localhost:3001/api/categories/1
+// http://localhost:3001/api/categories/6
 /*
  {
     "category_name" : "Stitch Fix Clothing"

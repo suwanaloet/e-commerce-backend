@@ -1,18 +1,18 @@
 # E-commerce Back End 
 
-### Description
+## Description
 backend for e-commerce website made in Express, with MySQL using Sequelize. 
 
-### Installation
+## Installation
 
-#### Command line start:
+### Command line start:
 
 ##### mysql -u root -p
 ##### enter password
 ##### source Develop/db/schema.sql
 ##### show databases
 
-#### In Terminal
+### In Terminal
 
 ##### npm run seed
 ##### npm run start
@@ -27,6 +27,7 @@ backend for e-commerce website made in Express, with MySQL using Sequelize.
 ##### sequelize: npm i sequelize
 
 # Video Link
+https://drive.google.com/file/d/1AKn2PRFQcck4641x2Ac49b8HWY8tlT3r/view
 
 ## Repo link 
 https://github.com/suwanaloet/e-commerce-backend
